@@ -230,7 +230,7 @@ class TestCommand(Command):
 
     def run(self):
         import nose
-        nose.main(argv=['--exe','--with-coverage'])
+        nose.main(argv=['--exe', '--with-coverage'])
 
 
 # The data files to install along with the module

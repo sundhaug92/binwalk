@@ -11,11 +11,11 @@ def test_firmware_squashfs():
     verify that the only signature returned is Motorola S-rec data-signature
     '''
     expected_results = [
-            [0, 'DLOB firmware header, boot partition: "dev=/dev/mtdblock/2"'],
-            [112, 'LZMA compressed data, properties: 0x5D, dictionary size: 33554432 bytes, uncompressed size: 3466208 bytes'],
-            [1179760, 'PackImg section delimiter tag, little endian size: 11548416 bytes; big endian size: 3649536 bytes'],
-            [1179792, 'Squashfs filesystem, little endian, version 4.0, compression:lzma, size: 3647665 bytes, 1811 inodes, blocksize: 524288 bytes, created: 2013-09-17 06:43:22'],
-            ]
+        [0, 'DLOB firmware header, boot partition: "dev=/dev/mtdblock/2"'],
+        [112, 'LZMA compressed data, properties: 0x5D, dictionary size: 33554432 bytes, uncompressed size: 3466208 bytes'],
+        [1179760, 'PackImg section delimiter tag, little endian size: 11548416 bytes; big endian size: 3649536 bytes'],
+        [1179792, 'Squashfs filesystem, little endian, version 4.0, compression:lzma, size: 3647665 bytes, 1811 inodes, blocksize: 524288 bytes, created: 2013-09-17 06:43:22'],
+    ]
 
     scan_result = binwalk.scan(
         dirname(__file__) + '/input-vectors/firmware.squashfs',
